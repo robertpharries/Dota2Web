@@ -9,19 +9,25 @@
 <table>
     <tr>
         <th>Match Id</th>
+        <th>Hero</th>
         <th>Result</th>
+        <th>Duration</th>
+        <th>K/D/A</th>
     </tr>
     @foreach (var md in ViewBag.mdList)
     {
         <tr>
-            <td><a href="https://www.dotabuff.com/matches/@md.getMatchId()">@md.getMatchId()</a></td>
-            @if(md.playerResult(ViewBag.id))
+            <td><a href="https://www.dotabuff.com/matches/@md.GetMatchId()">@md.GetMatchId()</a></td>
+            <td>@ViewBag.heroDetails.GetHeroNameById(md.HeroPlayed(ViewBag.id))</td>
+            @if(md.PlayerResult(ViewBag.id))
             {
                 <td>Won</td>
             } else
             {
                 <td>Lost</td>
             }
+            <td>@TimeSpan.FromSeconds(md.GetDuration()).ToString(@"hh\:mm\:ss")</td>
+            <td>@md.GetKillsByPlayer(ViewBag.id)/@md.GetDeathsByPlayer(ViewBag.id)/@md.GetAssistsByPlayer(ViewBag.id)</td>
         </tr>
     }
 </table>

@@ -9,16 +9,78 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+table, td, th {    
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
+
+th {
+    padding: 15px;
+    background-color: #a03030;
+    color: white;
+}
+
+th:nth-child(1), td:nth-child(1) {
+	text-align: left;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+tr:hover {
+	background-color: #ffdddd;
+}
+
+input[type=text] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    padding: 8px 12px 8px 12px;
+    outline: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+input[type=text]:focus {
+    border: 2px solid #a03030;
+}
+
+button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    outline:none !important;
+}
+
+button:hover {
+    border: 2px solid #a03030;
+}
+
+.toolbardemoScrollShrink .face {
+  width: 48px;
+  margin: 16px;
+  border-radius: 48px;
+  border: 1px solid #ddd; }

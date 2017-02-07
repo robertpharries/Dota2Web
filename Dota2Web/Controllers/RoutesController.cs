@@ -16,10 +16,17 @@ namespace Dota2Web.Controllers
         {
             ViewBag.id = id;
 
-            ApiAccess apia = new ApiAccess(id);
+            DotaApiManage.MatchHistory.ApiAccess apia = new DotaApiManage.MatchHistory.ApiAccess(id);
             List<string> resList = apia.GetMatchIds();
+            List<DotaApiManage.MatchDetails.ApiAccess> mdList = new List<DotaApiManage.MatchDetails.ApiAccess>();
+            foreach (var mid in resList)
+            {
+                mdList.Add(new DotaApiManage.MatchDetails.ApiAccess(mid));
+            }
 
             ViewBag.matchIds = resList;
+
+            ViewBag.mdList = mdList;
 
             return View();
         }

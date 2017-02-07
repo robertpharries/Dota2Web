@@ -9,9 +9,19 @@
 <table>
     <tr>
         <th>Match Id</th>
+        <th>Result</th>
     </tr>
-    @foreach (var id in ViewBag.matchIds)
+    @foreach (var md in ViewBag.mdList)
     {
-        <tr><td><a href="https://www.dotabuff.com/matches/@id">@id</a></td></tr>
+        <tr>
+            <td><a href="https://www.dotabuff.com/matches/@md.getMatchId()">@md.getMatchId()</a></td>
+            @if(md.playerResult(ViewBag.id))
+            {
+                <td>Won</td>
+            } else
+            {
+                <td>Lost</td>
+            }
+        </tr>
     }
 </table>

@@ -5,34 +5,15 @@
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
 </head>
 <body>
-    <div id="toolbarContainer" ng-controller="toolbarController as ctrl" layout="column" ng-cloak>
-        <md-content>
-            <md-toolbar md-scroll-shrink>
-                <div class="md-toolbar-tools">
-                    <md-button class="md-icon-button" aria-label="Settings">
-                        <md-icon class="material-icons">menu</md-icon>
-                    </md-button>
-                    <h2>
-                        <span>Contacts</span>
-                    </h2>
-                    <span flex></span>
-                    <md-button class="md-icon-button" aria-label="More">
-                        <md-icon class="material-icons">more_vert</md-icon>
-                    </md-button>
-                </div>
-            </md-toolbar>
-        </md-content>
-    </div>
+    <ul>
+        <li><a href="/#/search">Home</a></li>
+        <li><a href="/#/about">About</a></li>
+    </ul>
 
-            <ul>
-                <li><a href="/#/search">Home</a></li>
-                <li><a href="/#/about">About</a></li>
-            </ul>
+    <div ng-view></div>
 
-            <div ng-view></div>
-
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
-            @Scripts.Render("~/bundles/Dota2Web")
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+    @Scripts.Render("~/bundles/Dota2Web")
 </body>
 </html>

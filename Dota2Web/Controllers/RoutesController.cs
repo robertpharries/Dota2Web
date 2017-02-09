@@ -26,7 +26,7 @@ namespace Dota2Web.Controllers
 
             ViewBag.matchIds = resList;
             ViewBag.mdList = mdList;
-            ViewBag.heroDetails = new HeroDetails();
+            ViewBag.heroDetails = new DotaApiManage.Heroes.HeroDetails();
 
             return View();
         }

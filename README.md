@@ -8,3 +8,4 @@ The site in its current state pulls down the recent match history for a player's
 
 The site uses Angular tools, such as Route for routing subviews into the search page, and Materials for the Toolbar/Buttons used in the app.
 
+Relies on the DotaApiManage repo to retrieve match information.
